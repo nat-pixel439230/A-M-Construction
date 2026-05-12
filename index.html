@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-M Construction | Roofing & Paving</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+--blue: #1a5eb8;
+--blue-dark: #0e3d80;
+--blue-deep: #0a2650;
+--blue-light: #e8f0fc;
+--white: #ffffff;
+--off-white: #f5f7fa;
+--border: #dde4ef;
+--gray: #5a6a82;
+--text: #1c2b45;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Barlow', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+/* NAV */
+nav {
+position: sticky; top: 0; z-index: 200;
+background: var(--blue-deep);
+display: flex; align-items: center; justify-content: space-between;
+padding: 14px 5%;
+box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+.nav-logo {
+font-family: 'Barlow Condensed', sans-serif;
+font-weight: 900;
+font-size: 1.45rem;
+color: var(--white);
+letter-spacing: .04em;
+}
+.nav-logo span { color: #90b8f0; }
+.nav-cta {
+display: inline-flex;
+align-items: center;
+gap: 7px;
+background: var(--blue);
+color: var(--white);
+font-family: 'Barlow Condensed', sans-serif;
+font-weight: 800;
+font-size: 1rem;
+letter-spacing: .03em;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+border: 2px solid rgba(255,255,255,.2);
+transition: background .18s;
+}
+.nav-cta:hover { background: var(--blue-dark); }
+/* HERO */
+#hero {
+background-image: url('logo.jpg');
+background-size: 350px;
+background-repeat: repeat;
+background-position: center top;
+background-color: var(--blue-deep);
+padding: 80px 5% 0;
+text-align: center;
+position: relative;
+}
+#hero::before {
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(5, 12, 24, .72);
+}
+#hero > * {
+position: relative;
+z-index: 1;
+}
+.hero-logo {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+border: 4px solid #ffffff;
+object-fit: cover;
+display: block;
+margin: 0 auto 16px;
+box-shadow: 0 8px 24px rgba(0,0,0,.28);
+background: #fff;
+}
+.hero-badge {
+display: inline-block;
+background: rgba(255,255,255,.12);
+border: 1px solid rgba(255,255,255,.3);
+color: #c8ddf8;
+padding: 5px 16px;
+border-radius: 100px;
+font-size: .82rem;
+font-weight: 600;
+letter-spacing: .1em;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+#hero h1 {
+font-family: 'Barlow Condensed', sans-serif;
+font-weight: 900;
+font-size: clamp(2.2rem, 5.5vw, 4rem);
+color: var(--white);
+line-height: 1.1;
+max-width: 760px;
+margin: 0 auto;
+}
+.hero-tagline {
+font-family: 'Barlow Condensed', sans-serif;
+font-weight: 800;
+font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+color: #90b8f0;
+letter-spacing: .06em;
+text-transform: uppercase;
+margin-top: 12px;
+}
+#hero p.sub {
+color: rgba(255,255,255,.72);
+font-size: 1.05rem;
+font-weight: 300;
+margin: 14px auto 0;
+max-width: 500px;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
+.btn-white {
+display: inline-flex; align-items: center; gap: 8px;
+background: var(--white); color: var(--blue-dark);
+font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: .03em;
+padding: 14px 32px; border-radius: 5px; text-decoration: none;
+box-shadow: 0 4px 16px rgba(0,0,0,.2); transition: transform .18s, box-shadow .18s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+.btn-ghost {
+display: inline-flex; align-items: center; gap: 8px;
+border: 2px solid rgba(255,255,255,.5); color: var(--white);
+font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: .03em;
+padding: 12px 30px; border-radius: 5px; text-decoration: none; transition: background .18s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+.hero-wave { line-height: 0; margin-top: 50px; }
+.hero-wave svg { display: block; width: 100%; }
+/* SECTION */
+section { padding: 72px 5%; }
+.section-label { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: var(--blue-deep); line-height: 1.15; }
+.section-sub { color: var(--gray); font-size: 1rem; margin-top: 10px; max-width: 560px; }
+.center { text-align: center; }
+.center .section-sub { margin-left: auto; margin-right: auto; }
+.divider { width: 44px; height: 3px; background: var(--blue); border-radius: 2px; margin: 12px 0 0; }
+.center .divider { margin: 12px auto 0; }
+/* SERVICES */
+#services { background: var(--off-white); }
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 18px;
+max-width: 1080px;
+margin: 40px auto 0;
+}
+.service-card {
+background: var(--white);
+border-radius: 8px;
+padding: 26px 22px;
+border: 1px solid var(--border);
+border-top: 3px solid var(--blue);
+transition: box-shadow .2s, transform .2s;
+}
+.service-card:hover { box-shadow: 0 8px 28px rgba(26,94,184,.12); transform: translateY(-3px); }
+.s-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--blue-deep); margin-bottom: 6px; }
+.service-card p { color: var(--gray); font-size: .92rem; line-height: 1.6; }
+.services-cta { text-align: center; margin-top: 34px; }
+.btn-solid {
+display: inline-flex; align-items: center; gap: 8px;
+background: var(--blue); color: var(--white);
+font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: .03em;
+padding: 13px 28px; border-radius: 5px; text-decoration: none; border: none; cursor: pointer;
+transition: background .18s, transform .18s;
+}
+.btn-solid:hover { background: var(--blue-dark); transform: translateY(-1px); }
+/* WHY US */
+#why { background: var(--white); }
+.why-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+gap: 18px;
+max-width: 1000px;
+margin: 40px auto 0;
+}
+.why-card { background: var(--blue-light); border-radius: 8px; padding: 24px 20px; border-left: 4px solid var(--blue); }
+.why-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+.why-card h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--blue-deep); margin-bottom: 6px; }
+.why-card p { color: var(--gray); font-size: .9rem; line-height: 1.55; }
+/* REVIEWS */
+#reviews { background: var(--white); }
+.reviews-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+gap: 18px;
+max-width: 980px;
+margin: 40px auto 0;
+}
+.review-card { background: var(--off-white); border-radius: 8px; padding: 24px 20px; border: 1px solid var(--border); border-left: 4px solid var(--blue); }
+.stars { color: var(--blue); font-size: 1rem; letter-spacing: 2px; margin-bottom: 10px; }
+.review-card blockquote { color: var(--text); font-size: .95rem; line-height: 1.7; font-style: italic; margin-bottom: 14px; }
+.reviewer { display: flex; align-items: center; gap: 10px; }
+.rev-av { width: 36px; height: 36px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: .9rem; flex-shrink: 0; }
+.rev-info strong { display: block; font-weight: 600; font-size: .9rem; color: var(--blue-deep); }
+.rev-info span { font-size: .78rem; color: var(--gray); }
+/* HOURS */
+#hours { background: var(--blue-light); }
+.hours-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+.hours-table { width: 100%; border-collapse: collapse; margin: 28px auto 0; }
+.hours-table tr { border-bottom: 1px solid var(--border); }
+.hours-table tr:last-child { border-bottom: none; }
+.hours-table td { padding: 11px 14px; font-size: .97rem; color: var(--text); }
+.hours-table td:first-child { font-weight: 600; text-align: left; }
+.hours-table td:last-child { text-align: right; color: var(--gray); }
+.hours-table .closed td { color: var(--gray); opacity: .6; }
+.hours-note { margin-top: 20px; font-size: .95rem; color: var(--blue-dark); font-weight: 500; }
+.hours-note a { color: var(--blue); font-weight: 700; text-decoration: none; }
+/* PAYMENT */
+#payment { background: var(--white); }
+.payment-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.payment-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
+.pay-chip {
+display: inline-flex; align-items: center; gap: 6px;
+background: var(--off-white); border: 1px solid var(--border); border-radius: 100px;
+padding: 9px 18px; font-size: .92rem; font-weight: 600; color: var(--blue-deep); white-space: nowrap;
+}
+/* CONTACT */
+#contact { background: var(--blue-deep); }
+.contact-inner {
+display: grid; grid-template-columns: 1fr 1fr;
+gap: 56px; align-items: start; max-width: 1020px; margin: 0 auto;
+}
+.contact-left .section-label { color: #90b8f0; }
+.contact-left .section-title { color: var(--white); }
+.contact-left .section-sub { color: rgba(255,255,255,.6); }
+.contact-left .divider { background: #90b8f0; }
+.c-phone { margin-top: 28px; display: flex; align-items: center; gap: 14px; }
+.c-ph-circle { width: 50px; height: 50px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.c-ph-text span { display: block; color: rgba(255,255,255,.5); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.c-ph-text a { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--white); text-decoration: none; line-height: 1; }
+.avail-badge {
+display: inline-flex; align-items: center; gap: 7px;
+background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+color: #c8ddf8; padding: 7px 14px; border-radius: 100px; font-size: .82rem; font-weight: 600; margin-top: 16px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex-shrink: 0; animation: pulse 1.5s infinite; }
+.contact-extra {
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+.contact-email {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+width: fit-content;
+background: rgba(255,255,255,.08);
+border: 1px solid rgba(255,255,255,.18);
+color: var(--white);
+padding: 10px 14px;
+border-radius: 6px;
+text-decoration: none;
+transition: background .18s, transform .18s;
+font-weight: 600;
+}
+.contact-email:hover { background: rgba(255,255,255,.14); transform: translateY(-1px); }
+.social-links {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+.social-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: rgba(255,255,255,.08);
+border: 1px solid rgba(255,255,255,.18);
+color: var(--white);
+padding: 10px 14px;
+border-radius: 6px;
+text-decoration: none;
+transition: background .18s, transform .18s;
+font-weight: 600;
+}
+.social-link:hover { background: rgba(255,255,255,.14); transform: translateY(-1px); }
+.social-link img { width: 18px; height: 18px; display: block; flex-shrink: 0; }
+.contact-form { background: var(--white); border-radius: 10px; padding: 30px 26px; }
+.contact-form h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--blue-deep); margin-bottom: 20px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: .8rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+.form-group input,
+.form-group select {
+width: 100%;
+padding: 11px 13px;
+border: 1px solid var(--border);
+border-radius: 5px;
+font-size: .95rem;
+font-family: inherit;
+color: var(--text);
+background: var(--off-white);
+outline: none;
+transition: border-color .18s;
+appearance: none;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--blue); background: var(--white); }
+.btn-submit {
+width: 100%;
+padding: 14px;
+background: var(--blue);
+color: var(--white);
+font-family: 'Barlow Condensed', sans-serif;
+font-weight: 800;
+font-size: 1.1rem;
+letter-spacing: .03em;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background .18s;
+margin-top: 4px;
+}
+.btn-submit:hover { background: var(--blue-dark); }
+.form-success { display: none; text-align: center; padding: 20px 0; }
+.form-success .ck { width: 54px; height: 54px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; margin: 0 auto 12px; }
+.form-success h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--blue-deep); margin-bottom: 6px; }
+.form-success p { color: var(--gray); font-size: .93rem; }
+.form-success a { color: var(--blue); font-weight: 700; text-decoration: none; }
+@media (max-width: 700px) {
+.contact-inner { grid-template-columns: 1fr; gap: 34px; }
+.contact-form { padding: 22px 16px; }
+}
+/* FOOTER */
+footer { background: #060f1e; padding: 34px 5%; text-align: center; }
+.footer-logo-wrap {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.footer-logo-img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+display: block;
+margin: 0 auto 12px;
+}
+.footer-logo {
+font-family: 'Barlow Condensed', sans-serif;
+font-weight: 900;
+font-size: 1.55rem;
+color: var(--white);
+letter-spacing: .04em;
+margin-bottom: 6px;
+}
+.footer-logo span { color: #90b8f0; }
+footer p { color: rgba(255,255,255,.36); font-size: .84rem; margin: 4px 0; }
+footer a { color: #90b8f0; text-decoration: none; }
+.footer-div { width: 38px; height: 2px; background: var(--blue); border-radius: 2px; margin: 12px auto; }
+.footer-contact-links {
+margin-top: 14px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+}
+.footer-socials {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+margin-top: 12px;
+}
+.footer-socials a {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(255,255,255,.06);
+border: 1px solid rgba(255,255,255,.12);
+color: var(--white);
+padding: 9px 12px;
+border-radius: 6px;
+text-decoration: none;
+transition: background .18s, transform .18s;
+}
+.footer-socials a:hover { background: rgba(255,255,255,.12); transform: translateY(-1px); }
+.footer-socials img { width: 18px; height: 18px; display: block; }
+/* MOBILE STICKY */
+.sticky-bar {
+display: none;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 300;
+background: var(--blue-deep);
+padding: 11px 14px;
+gap: 10px;
+border-top: 2px solid var(--blue);
+box-shadow: 0 -3px 14px rgba(0,0,0,.3);
+}
+@media (max-width: 560px) {
+.sticky-bar { display: flex; }
+.sticky-bar a {
+flex: 1;
+justify-content: center;
+font-size: .95rem;
+padding: 12px 6px;
+text-align: center;
+}
+body { padding-bottom: 62px; }
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-logo">A-M <span>Construction</span></div>
+<a href="tel:8608887942" class="nav-cta">📞 (860) 888-7942</a>
+</nav>
+<!-- HERO -->
+<section id="hero">
+<img src="logo.jpg" alt="A-M Construction logo" class="hero-logo">
+<div class="hero-badge">Roofing · Paving · Storm Damage · 24/7</div>
+<h1>Reliable Roofing &amp; Construction Services You Can Trust</h1>
+<div class="hero-tagline">Fast, Friendly, Affordable</div>
+<p class="sub">Professional service available around the clock — residential &amp; commercial.</p>
+<div class="hero-ctas">
+<a href="tel:8608887942" class="btn-white">📞 Call Now — (860) 888-7942</a>
+<a href="#contact" class="btn-ghost">Get a Free Quote →</a>
+</div>
+<div class="hero-wave">
+<svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" fill="#f5f7fa"/>
+</svg>
+</div>
+</section>
+<!-- SERVICES -->
+<section id="services">
+<div class="center reveal">
+<div class="section-label">Our Services</div>
+<div class="section-title">What We Do</div>
+<div class="divider"></div>
+<p class="section-sub">Full-service roofing and paving for homeowners and businesses.</p>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="s-icon">🔍</div>
+<h3>Roof Inspection</h3>
+<p>Thorough inspection to catch leaks, damage, or wear before problems grow.</p>
+</div>
+<div class="service-card reveal">
+<div class="s-icon">🛠️</div>
+<h3>Roof Repair</h3>
+<p>Fast, reliable repairs for missing shingles, leaks, and structural damage.</p>
+</div>
+<div class="service-card reveal">
+<div class="s-icon">🏠</div>
+<h3>Roof Installation</h3>
+<p>New roofs built with quality materials on residential and commercial properties.</p>
+</div>
+<div class="service-card reveal">
+<div class="s-icon">⛈️</div>
+<h3>Storm &amp; Wind Damage Repair</h3>
+<p>Emergency response to protect your home and restore your roof quickly.</p>
+</div>
+<div class="service-card reveal">
+<div class="s-icon">🚗</div>
+<h3>Asphalt &amp; Driveway Paving</h3>
+<p>Smooth, durable driveways and asphalt surfaces installed right the first time.</p>
+</div>
+</div>
+<div class="services-cta reveal">
+<a href="tel:8608887942" class="btn-solid">📞 Call for a Free Estimate</a>
+</div>
+</section>
+<!-- WHY US -->
+<section id="why">
+<div class="center reveal">
+<div class="section-label">Why Choose Us</div>
+<div class="section-title">Built on Trust &amp; Quality</div>
+<div class="divider"></div>
+</div>
+<div class="why-grid">
+<div class="why-card reveal">
+<div class="why-num">01</div>
+<h4>Fast Response</h4>
+<p>We pick up and show up. Available 24 hours including evenings and emergencies.</p>
+</div>
+<div class="why-card reveal">
+<div class="why-num">02</div>
+<h4>Professional Team</h4>
+<p>Experienced, skilled crew that handles every job safely and correctly.</p>
+</div>
+<div class="why-card reveal">
+<div class="why-num">03</div>
+<h4>Affordable Pricing</h4>
+<p>Competitive rates with no surprises. Free estimates before any work begins.</p>
+</div>
+<div class="why-card reveal">
+<div class="why-num">04</div>
+<h4>Quality Workmanship</h4>
+<p>Clean installs, attention to detail, and results that last.</p>
+</div>
+</div>
+</section>
+<!-- REVIEWS -->
+<section id="reviews">
+<div class="center reveal">
+<div class="section-label">Customer Reviews</div>
+<div class="section-title">What Homeowners Say</div>
+<div class="divider"></div>
+</div>
+<div class="reviews-grid">
+<div class="review-card reveal">
+<div class="stars">★★★★★</div>
+<blockquote>"Absolutely amazing job. Very flexible with scheduling and always professional. My driveway looks beautiful — better than I expected!"</blockquote>
+<div class="reviewer"><div class="rev-av">M</div><div class="rev-info"><strong>Maria T.</strong><span>Driveway Paving</span></div></div>
+</div>
+<div class="review-card reveal">
+<div class="stars">★★★★★</div>
+<blockquote>"Fast, clean, and very professional. Best price I found and the roof looks fantastic. Will definitely call them again."</blockquote>
+<div class="reviewer"><div class="rev-av">J</div><div class="rev-info"><strong>James R.</strong><span>Roof Installation</span></div></div>
+</div>
+<div class="review-card reveal">
+<div class="stars">★★★★★</div>
+<blockquote>"Extremely professional, quality work from start to finish. Handled our storm damage quickly and the repair looks great. Highly recommend!"</blockquote>
+<div class="reviewer"><div class="rev-av">S</div><div class="rev-info"><strong>Sandra L.</strong><span>Storm Damage Repair</span></div></div>
+</div>
+</div>
+</section>
+<!-- HOURS -->
+<section id="hours">
+<div class="hours-inner reveal">
+<div class="section-label center">Business Hours</div>
+<div class="section-title center">When We're Available</div>
+<div class="divider"></div>
+<table class="hours-table">
+<tr><td>Monday</td><td>By Appointment</td></tr>
+<tr><td>Tuesday</td><td>By Appointment</td></tr>
+<tr><td>Wednesday</td><td>By Appointment</td></tr>
+<tr><td>Thursday</td><td>By Appointment</td></tr>
+<tr><td>Friday</td><td>By Appointment</td></tr>
+<tr><td>Saturday</td><td>By Appointment</td></tr>
+<tr class="closed"><td>Sunday</td><td>Closed</td></tr>
+</table>
+<p class="hours-note">📲 Call or text anytime for a fast response — <a href="tel:8608887942">(860) 888-7942</a></p>
+</div>
+</section>
+<!-- PAYMENT -->
+<section id="payment">
+<div class="payment-inner reveal">
+<div class="section-label">Payments</div>
+<div class="section-title">We Accept</div>
+<div class="divider"></div>
+<p class="section-sub" style="margin:10px auto 0;">All major payment methods accepted for your convenience.</p>
+<div class="payment-chips">
+<div class="pay-chip">💳 Credit Cards</div>
+<div class="pay-chip">💵 Cash</div>
+<div class="pay-chip">📝 Check</div>
+<div class="pay-chip">📱 CashApp</div>
+<div class="pay-chip">🅿️ PayPal</div>
+<div class="pay-chip">💜 Venmo</div>
+<div class="pay-chip">⚡ Zelle</div>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="contact-inner">
+<div class="contact-left reveal">
+<div class="section-label">Get In Touch</div>
+<div class="section-title">Request Your Free Estimate</div>
+<div class="divider"></div>
+<p class="section-sub">Fill out the form or call us directly. We respond fast.</p>
+<div class="c-phone">
+<div class="c-ph-circle">📞</div>
+<div class="c-ph-text">
+<span>Call us anytime</span>
+<a href="tel:8608887942">(860) 888-7942</a>
+</div>
+</div>
+<div class="avail-badge"><div class="dot"></div> Available 24 hours, 7 days a week</div>
+<div class="contact-extra">
+<a class="contact-email" href="mailto:andyhartford20@icloud.com">✉️ andyhartford20@icloud.com</a>
+<div class="social-links">
+<a class="social-link" href="https://www.tiktok.com/@thedrivewayguy30" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok">
+TikTok
+</a>
+<a class="social-link" href="https://www.facebook.com/share/1CJ3iEDAM6/" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.simpleicons.org/facebook/ffffff" alt="Facebook">
+Facebook
+</a>
+</div>
+</div>
+</div>
+<div class="contact-form reveal">
+<h3>Get a Free Quote</h3>
+<div id="form-fields">
+<div class="form-group">
+<label>Your Name</label>
+<input type="text" id="fname" placeholder="John Smith">
+</div>
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" id="fphone" placeholder="(860) 555-0000">
+</div>
+<div class="form-group">
+<label>Service Needed</label>
+<select id="fservice">
+<option value="" disabled selected>Select a service…</option>
+<option>Roof Inspection</option>
+<option>Roof Repair</option>
+<option>Roof Installation</option>
+<option>Storm &amp; Wind Damage Repair</option>
+<option>Asphalt &amp; Driveway Paving</option>
+<option>Other / Not Sure</option>
+</select>
+</div>
+<button class="btn-submit" onclick="submitForm()">Send My Request →</button>
+</div>
+<div class="form-success" id="form-success">
+<div class="ck">✓</div>
+<h4>Request Received!</h4>
+<p>We'll be in touch shortly.<br>For faster service, call <a href="tel:8608887942">(860) 888-7942</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo-wrap">
+<img src="logo.jpg" alt="A-M Construction logo" class="footer-logo-img">
+<div class="footer-logo">A-M <span>Construction</span></div>
+</div>
+<div class="footer-div"></div>
+<p>Trusted local contractor — Roofing, Paving &amp; More</p>
+<p>Commercial &amp; Residential · Available 24/7</p>
+<p style="margin-top:10px;"><a href="tel:8608887942">(860) 888-7942</a> · Call Now for Fast Service</p>
+<div class="footer-contact-links">
+<p><a href="mailto:andyhartford20@icloud.com">andyhartford20@icloud.com</a></p>
+<div class="footer-socials">
+<a href="https://www.tiktok.com/@thedrivewayguy30" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok">
+TikTok
+</a>
+<a href="https://www.facebook.com/share/1CJ3iEDAM6/" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn.simpleicons.org/facebook/ffffff" alt="Facebook">
+Facebook
+</a>
+</div>
+</div>
+<p style="margin-top:16px;color:rgba(255,255,255,.18);font-size:.78rem;">© 2026 A-M Construction. All rights reserved.</p>
+</footer>
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-bar">
+<a href="tel:8608887942" class="btn-solid">📞 Call Now</a>
+<a href="#contact" class="btn-ghost">Free Quote</a>
+</div>
+<script>
+const els = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+entries.forEach(e => {
+if (e.isIntersecting) {
+e.target.classList.add('visible');
+obs.unobserve(e.target);
+}
+});
+}, { threshold: 0.1 });
+els.forEach(el => obs.observe(el));
+function submitForm() {
+const n = document.getElementById('fname').value.trim();
+const p = document.getElementById('fphone').value.trim();
+const s = document.getElementById('fservice').value;
+if (!n || !p || !s) {
+alert('Please fill in all fields.');
+return;
+}
+document.getElementById('form-fields').style.display = 'none';
+document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
